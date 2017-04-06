@@ -31,6 +31,13 @@ public abstract class AbstractPendulum {
 	if (validGC (inG)) g = inG;
 	else throw new IllegalArgumentException ("invalid local gravitational field: " + inG);
     }
+    
+    /*
+     * If no parameter of gravity is given, gravity of Earth is used as default.
+     */
+    public AbstractPendulum (double inLength, double inMass, double inTheta0) {
+    	this (inLength, inMass, inTheta0, 9.80665);
+    }
 
     private boolean validDisplacement (double val) { return (val >= 0); }
     private boolean validPointMass (double val) { return (val > 0); }

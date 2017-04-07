@@ -40,5 +40,9 @@ public class RegularPendulum extends AbstractPendulum {
     public double getLastTime () { return iterations*delta; }
     public double getDissipationConstant () { return dissipation; }
     
-
+    //@Override
+    public void setGravityModel (GravityModel gravityModel) {
+    	this.gravityModel = gravityModel;
+    	lastAccel = - dissipation*lastVel - this.getGravityModel ().getGravitationalField () / this.getStringLength () * Math.sin (lastTheta);
+    }
 }

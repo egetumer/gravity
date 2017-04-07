@@ -35,12 +35,6 @@ public abstract class AbstractPendulum {
 		("invalid local gravitational field: " + inGravityModel.getGravitationalField ());
     }
     
-    /*
-    
-    public AbstractPendulum (double inLength, double inMass, double inTheta0) {
-    	this (inLength, inMass, inTheta0, new GravityConstant (9.80665));
-    }
-    */
 
     private boolean validDisplacement (double val) { return (val >= 0); }
     private boolean validPointMass (double val) { return (val > 0); }
@@ -54,15 +48,11 @@ public abstract class AbstractPendulum {
     public double getStringLength () { return stringLength; }
 
     //public double getGravitationalField () { return g; }
-    /*
-    public double getGravitationalField () {
-    	return gravityModel.getGravitationalField ();
-    }
-    */
     
-    public void setGravityModel (GravityModel gravityModel) {
-    	this.gravityModel = gravityModel;
-    }
+    
+    //public void setGravityModel (GravityModel gravityModel) {
+    //	this.gravityModel = gravityModel;
+    //}
     
     public GravityModel getGravityModel () {
     	return gravityModel;
